@@ -87,7 +87,6 @@
 				callback.call(this, [res.data])
 			})
 		} else {
-			updateData.id = Date.now
 			$http("/api/todos", "post", updateData, function (err, res) {
 				if (err) {
 					throw err
