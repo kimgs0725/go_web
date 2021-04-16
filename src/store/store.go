@@ -37,9 +37,9 @@ func (s *Store) Create(t Todo) {
 }
 
 func (s *Store) Update(t Todo) {
-	todo, found := s.Find(t.Id)
+	_, found := s.Find(t.Id)
 	if found {
-		todo.Completed = t.Completed
+		s.db[t.Id] = t
 	}
 }
 

@@ -21,7 +21,7 @@ func main() {
 			list = append(list, todo)
 		}
 		sort.Slice(list, func(i, j int) bool {
-			return list[i].Id < list[j].Id
+			return list[i].Id > list[j].Id
 		})
 		application.Json(rw, list)
 	})
